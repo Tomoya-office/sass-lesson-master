@@ -1,0 +1,84 @@
+@charset 'UTF-8';
+
+@use 'variable';
+@use 'mixin';
+
+header {
+  position: relative;
+  height: 100px;
+  width: 400px;
+  background-color: variable.$navy;
+
+  ul {
+    position: absolute;
+    right: 20px;
+    display: inline-flex;
+    background-color: variable.$white;
+    padding: 10px;
+
+
+    @each $name in variable.$classNames {
+      $index: index(variable.$classNames, $name); // クラス名のインデックスを取得
+      $color: nth(variable.$buttonColor, $index); // 対応する色を取得
+
+      .#{$name} {
+        @include mixin.color_list($color);
+      }
+    }
+    .blue {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.display-flex {
+  display: flex;
+  text-align: center;
+}
+
+sidebar {
+  height: 250px;
+  width: 150px;
+  background-color: variable.$green;
+}
+
+main {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  background-color: variable.$red;
+
+.white-box{
+  height: fit-content;
+  width: fit-content;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  background-color: #FFF;
+}
+
+  ul {
+    padding: 0;
+    margin: 40px 0 0 40px;
+    list-style-type: none;
+
+    @each $name in variable.$classNames {
+      $index: index(variable.$classNames, $name); // クラス名のインデックスを取得
+      $color: nth(variable.$buttonColor, $index); // 対応する色を取得
+
+      .#{$name} {
+        @include mixin.vertical_color_list($color);
+      }
+    }
+
+    .blue {
+      margin: 0 0 0 0;
+    }
+
+  }
+}
+
+footer {
+  background-color: variable.$brown;
+  height: 100px;
+  width: 400px;
+}
