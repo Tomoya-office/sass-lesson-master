@@ -9,6 +9,7 @@
 @mixin vertical_color_list($color) {
   list-style-type: none;
   background-color: $color;
+  display: block;
   height: 40px;
   width: 140px;
 }
