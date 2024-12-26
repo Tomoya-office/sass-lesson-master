@@ -1,0 +1,21 @@
+@mixin color_list($color) {
+  list-style-type: none;
+  background-color: $color;
+  height: 40px;
+  width: 40px;
+  gap: 10px;
+}
+
+@mixin vertical_color_list($color) {
+  list-style-type: none;
+  background-color: $color;
+  display: block;
+  height: 40px;
+  width: 140px;
+}
+
+@mixin content_box($height, $width, $bg_color) {
+  height: $height;
+  width: $width;
+  background-color: $bg_color;
+}

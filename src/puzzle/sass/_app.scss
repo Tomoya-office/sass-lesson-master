@@ -1,0 +1,76 @@
+@charset 'UTF-8';
+
+@use 'variable';
+@use 'mixin';
+
+header {
+  @include mixin.content_box(100px, 400px, variable.$navy);
+
+  .header-content {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ul {
+    display: inline-flex;
+    gap: 10px;
+    background-color: variable.$white;
+    padding: 10px;
+    margin: 20px;
+
+    @each $name in variable.$classNames {
+      $index: index(variable.$classNames, $name); // クラス名のインデックスを取得
+      $color: nth(variable.$buttonColor, $index); // 対応する色を取得
+
+      .#{$name} {
+        @include mixin.color_list($color);
+      }
+    }
+
+  }
+}
+
+.main-content {
+  display: flex;
+  text-align: center;
+  width: fit-content;
+}
+
+aside {
+  @include mixin.content_box(250px, 150px, variable.$green);
+}
+
+section {
+  @include mixin.content_box(250px, 250px, variable.$red);
+
+  .white-box {
+    @include mixin.content_box(fit-content, fit-content, variable.$white);
+    margin: 0 0 10px 0;
+    padding: 5px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 40px 0 0 40px;
+    list-style-type: none;
+
+    @each $name in variable.$classNames {
+      $index: index(variable.$classNames, $name); // クラス名のインデックスを取得
+      $color: nth(variable.$buttonColor, $index); // 対応する色を取得
+
+      .#{$name} {
+        @include mixin.vertical_color_list($color);
+      }
+
+    }
+
+    li:nth-child(3) {
+      margin: 0;
+    }
+
+  }
+}
+
+footer {
+  @include mixin.content_box(100px, 400px, variable.$brown);
+}
