@@ -14,3 +14,8 @@
   width: 140px;
 }
 
+@mixin content_box($height, $width, $bg_color) {
+  height: $height;
+  width: $width;
+  background-color: $bg_color;
+}

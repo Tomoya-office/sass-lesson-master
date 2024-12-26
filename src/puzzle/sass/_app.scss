@@ -4,9 +4,7 @@
 @use 'mixin';
 
 header {
-  height: 100px;
-  width: 400px;
-  background-color: variable.$navy;
+  @include mixin.content_box(100px, 400px, variable.$navy);
 
   .header-content {
     display: flex;
@@ -39,23 +37,16 @@ header {
 }
 
 aside {
-  height: 250px;
-  width: 150px;
-  background-color: variable.$green;
+  @include mixin.content_box(250px, 150px, variable.$green);
 }
 
 section {
-  position: relative;
-  height: 250px;
-  width: 250px;
-  background-color: variable.$red;
+  @include mixin.content_box(250px, 250px, variable.$red);
 
   .white-box {
-    height: fit-content;
-    width: fit-content;
+    @include mixin.content_box(fit-content, fit-content, variable.$white);
     margin: 0 0 10px 0;
     padding: 5px;
-    background-color: variable.$white;
   }
 
   ul {
@@ -72,15 +63,14 @@ section {
       }
 
     }
-      li:nth-child(3){
-        margin: 0;
-      }
+
+    li:nth-child(3) {
+      margin: 0;
+    }
 
   }
 }
 
 footer {
-  background-color: variable.$brown;
-  height: 100px;
-  width: 400px;
+  @include mixin.content_box(100px, 400px, variable.$brown);
 }
