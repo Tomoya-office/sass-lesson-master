@@ -8,14 +8,15 @@ header {
   width: 400px;
   background-color: variable.$navy;
 
-  .left {
+  .header-content {
     display: flex;
     justify-content: flex-end;
   }
 
   ul {
     display: inline-flex;
-    background-color: #fff;
+    gap: 10px;
+    background-color: variable.$white;
     padding: 10px;
     margin: 20px;
 
@@ -28,15 +29,13 @@ header {
       }
     }
 
-    .blue {
-      margin: 0 0 0 0;
-    }
   }
 }
 
 .main-content {
   display: flex;
   text-align: center;
+  width: fit-content;
 }
 
 aside {
@@ -45,7 +44,7 @@ aside {
   background-color: variable.$green;
 }
 
-content {
+section {
   position: relative;
   height: 250px;
   width: 250px;
